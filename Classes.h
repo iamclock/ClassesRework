@@ -6,6 +6,15 @@
 #include <cmath>
 #include <cstring>
 #include <ctime>
+#include <cstddef> //have nullptr | -std=c++0x|
+
+
+// TODO:
+// 1) all exit(1) make exception
+// 2)
+// 
+// 
+
 
 
 //:::::::::::::::::::::::::::::
@@ -32,7 +41,7 @@ public:
 template <class Q>
 class Queue{
 public:
-Queue(int max_n=15);
+	Queue(int max_n=15);
 	~Queue();
 	void add(Q x);
 	Q get();
@@ -79,7 +88,7 @@ private:
 	node *begin;
 	node *end;
 public:
-	Spisok();
+	Spisok():nodes(0),end(nullptr),begin(nullptr){}
 	Spisok(int val);
 	~Spisok();
 	void insert(int iterator, int val);
@@ -101,15 +110,21 @@ class Complex{
 private:
 	double re, im;
 public:
-	Complex(){re=im=0;}
-	Complex(double r){
+	Complex():re(0),im(0){} //{re=im=0;}
+	Complex(double r):re(r),im(0){}
+	/*
+	{
 		re=r;
 		im=0;
 	}
-	Complex(double r, double i){
+	*/
+	Complex(double r, double i):re(r),im(i){}
+	/*
+	{
 		re=r;
 		im=i;
 	}
+	*/
 	int operator ==(const Complex &)const;
 	Complex& operator +=(const Complex &);
 	Complex& operator -=(const Complex &);
