@@ -1,7 +1,11 @@
+#ifndef SORTER_H
+#define SORTER_H
 
-
-
-
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
+#include <cstring>
+#include <ctime>
 
 
 //:::::::::::::::::::::::::::::
@@ -22,7 +26,7 @@ public:
 };
 
 //:::::::::::::::::::::::::::::::::::
-//               Queue				:
+//				Queue				:
 //:::::::::::::::::::::::::::::::::::
 
 template <class Q>
@@ -39,7 +43,7 @@ private:
 };
 
 //::::::::::::::::::::::::::::::::
-//               Array           :
+//				Array			 :
 //::::::::::::::::::::::::::::::::
 
 template <class A>
@@ -127,3 +131,4 @@ public:
 };
 
 
+#endif
